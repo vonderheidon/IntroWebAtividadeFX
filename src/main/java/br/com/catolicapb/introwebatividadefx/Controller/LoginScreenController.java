@@ -1,6 +1,7 @@
 package br.com.catolicapb.introwebatividadefx.Controller;
 
 import br.com.catolicapb.introwebatividadefx.Interface.IOnChangeScreen;
+import br.com.catolicapb.introwebatividadefx.Service.AuthService;
 import br.com.catolicapb.introwebatividadefx.Util.ScreenManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
@@ -37,7 +38,15 @@ public class LoginScreenController implements IOnChangeScreen {
     }
 
     private void loginProcedure() {
-        AppController.changeScreen("main");
+        String username = tfLogin.getText();
+        String password = pfPassword.getText();
+
+        boolean isAuthenticated = AuthService.login(username, password);
+        if (isAuthenticated) {
+            AppController.changeScreen("main");
+        } else {
+            System.out.println("Falha no login. Verifique suas credenciais.");
+        }
     }
 
     private void clearFields() {
