@@ -51,24 +51,6 @@ public class ProductDao {
         }
     }
 
-    public static List<Product> buscarProdutoPorNome(String token, String nome) throws Exception {
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(new URI(BASE_URL + "/produtos?nome=" + nome))
-                .header("Authorization", "Bearer " + token)
-                .header("Content-Type", "application/json")
-                .GET()
-                .build();
-
-        HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
-
-        if (response.statusCode() == 200) {
-            Type productListType = new TypeToken<List<Product>>(){}.getType();
-            return gson.fromJson(response.body(), productListType);
-        } else {
-            throw new Exception("Erro ao buscar produto por nome: " + response.body());
-        }
-    }
-
     public static Product inserirProduto(String token, Product produto) throws Exception {
         String json = gson.toJson(produto);
 
