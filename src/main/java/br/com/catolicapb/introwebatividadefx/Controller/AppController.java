@@ -14,6 +14,9 @@ public class AppController extends Application {
     private static Scene loginScene;
     private static Scene registerScene;
     private static Scene mainScene;
+    private static Scene managerUsersScene;
+    private static Scene productDetailScene;
+    private static Scene addProductScene;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -24,6 +27,12 @@ public class AppController extends Application {
         registerScene = new DraggableScene(fxmlRegister);
         Parent fxmlMain = FXMLLoader.load((AppController.class.getResource("/br/com/catolicapb/introwebatividadefx/MainScreen.fxml")));
         mainScene = new DraggableScene(fxmlMain);
+        Parent fxmlManagerUsers = FXMLLoader.load(AppController.class.getResource("/br/com/catolicapb/introwebatividadefx/ManagerUsersScreen.fxml"));
+        managerUsersScene = new DraggableScene(fxmlManagerUsers);
+        Parent fxmlProductDetail = FXMLLoader.load(AppController.class.getResource("/br/com/catolicapb/introwebatividadefx/ProductDetailsScreen.fxml"));
+        productDetailScene = new DraggableScene(fxmlProductDetail);
+        Parent fxmlAddProduct = FXMLLoader.load(AppController.class.getResource("/br/com/catolicapb/introwebatividadefx/AddProductScreen.fxml"));
+        addProductScene = new DraggableScene(fxmlAddProduct);
         primaryStage.setScene(loginScene);
         primaryStage.show();
     }
@@ -41,6 +50,10 @@ public class AppController extends Application {
             case "main":
                 stage.setScene(mainScene);
                 ScreenManager.notifyAllListeners("main", userID);
+                break;
+            case "addProduct":
+                stage.setScene(addProductScene);
+                ScreenManager.notifyAllListeners("addProduct", userID);
                 break;
         }
     }
