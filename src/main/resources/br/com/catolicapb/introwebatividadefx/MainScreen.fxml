@@ -14,7 +14,7 @@
         <Button fx:id="btUserManagement" layoutX="254.0" layoutY="154.0" mnemonicParsing="false" onAction="#btUserManagementAction" text="Gerenciar Usuários" />
         <Button layoutX="829.0" layoutY="154.0" mnemonicParsing="false" onAction="#btLogoutAction" text="Sair" />
         <TextField fx:id="searchBar" layoutX="619.0" layoutY="570.0" prefWidth="250.0" promptText="Buscar produto..." />
-        <TableView fx:id="productTable" layoutX="124.0" layoutY="260.0" prefHeight="191.0" prefWidth="746.0">
+        <TableView fx:id="productTable" layoutX="124.0" layoutY="260.0" prefHeight="177.0" prefWidth="746.0" stylesheets="@../../../../CSS/Style.css">
             <columns>
                 <TableColumn fx:id="idColumn" prefWidth="87.0" text="ID" />
                 <TableColumn fx:id="nomeColumn" prefWidth="213.0" text="Nome" />

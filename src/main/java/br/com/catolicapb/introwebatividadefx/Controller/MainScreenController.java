@@ -93,6 +93,8 @@ public class MainScreenController implements IOnChangeScreen {
     private void updatePage() {
         int totalRows = filteredProducts.size();
         int totalPages = (int) Math.ceil((double) totalRows / rowsPerPage);
+        currentPage = Math.max(1, Math.min(currentPage, totalPages));
+
         int startRow = (currentPage - 1) * rowsPerPage;
         int endRow = Math.min(startRow + rowsPerPage, totalRows);
 
@@ -100,7 +102,10 @@ public class MainScreenController implements IOnChangeScreen {
         pageDisplay.setText("Página " + currentPage + " de " + totalPages);
         prevPageBtn.setDisable(currentPage == 1);
         nextPageBtn.setDisable(currentPage == totalPages);
+
+        productTable.refresh();
     }
+
 
     @FXML
     private void previousPage() {
