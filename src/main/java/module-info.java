@@ -5,5 +5,6 @@ module br.com.catolicapb.introwebatividadefx {
     requires java.net.http;
 
     exports br.com.catolicapb.introwebatividadefx.Controller;
+    opens br.com.catolicapb.introwebatividadefx.Model to com.google.gson;
     opens br.com.catolicapb.introwebatividadefx.Controller to javafx.fxml;
 }

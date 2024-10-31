@@ -4,11 +4,11 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.catolicapb.introwebatividadefx.Controller.MainScreenController">
+<AnchorPane prefHeight="652.0" prefWidth="994.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.catolicapb.introwebatividadefx.Controller.MainScreenController">
    <children>
-    <Button layoutX="304.0" layoutY="154.0" mnemonicParsing="false" onAction="#btAddNewProductAction" text="Adicionar Produto" />
-      <Button fx:id="btUserManagement" layoutX="166.0" layoutY="154.0" mnemonicParsing="false" onAction="#btUserManagementAction" text="Gerenciar Usuários" />
-      <Button layoutX="977.0" layoutY="154.0" mnemonicParsing="false" onAction="#btLogoutAction" text="Sair" />
-      <Label layoutX="542.0" layoutY="92.0" text="Produtos Cadastrados" />
+    <Button layoutX="124.0" layoutY="154.0" mnemonicParsing="false" onAction="#btAddNewProductAction" text="Adicionar Produto" />
+      <Button fx:id="btUserManagement" layoutX="254.0" layoutY="154.0" mnemonicParsing="false" onAction="#btUserManagementAction" text="Gerenciar Usuários" />
+      <Button layoutX="829.0" layoutY="154.0" mnemonicParsing="false" onAction="#btLogoutAction" text="Sair" />
+      <Label layoutX="439.0" layoutY="80.0" text="Produtos Cadastrados" />
    </children>
 </AnchorPane>

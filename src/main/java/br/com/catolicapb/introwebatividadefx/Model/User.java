@@ -1,7 +1,9 @@
 package br.com.catolicapb.introwebatividadefx.Model;
 
+
 public class User {
-    private String id, username, password, userType;
+
+    private String id, loginuser, tipouser;
 
     public String getId() {
         return id;
@@ -11,27 +13,19 @@ public class User {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getLoginuser() {
+        return loginuser;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setLoginuser(String loginuser) {
+        this.loginuser = loginuser;
     }
 
-    public String getPassword() {
-        return password;
+    public String getTipouser() {
+        return tipouser;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getUserType() {
-        return userType;
-    }
-
-    public void setUserType(String userType) {
-        this.userType = userType;
+    public void setTipouser(String tipouser) {
+        this.tipouser = tipouser;
     }
 }
