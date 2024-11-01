@@ -144,7 +144,7 @@ public class MainScreenController implements IOnChangeScreen {
 
     @FXML
     void btAddNewProductAction() {
-
+        AppController.changeScreen("addProduct");
     }
 
     @FXML
@@ -154,15 +154,17 @@ public class MainScreenController implements IOnChangeScreen {
 
     @FXML
     void btUserManagementAction() {
-
+        AppController.changeScreen("managerUsers");
     }
 
     private void verDetalhes(Product product) {
-
+        ProductDetailsScreenController.SetProduct(product);
+        AppController.changeScreen("productDetails");
     }
 
     private void editarProduto(Product product) {
-
+        EditProductScreenController.setProduct(product);
+        AppController.changeScreen("editProduct");
     }
 
     private void excluirProduto(Product product) {

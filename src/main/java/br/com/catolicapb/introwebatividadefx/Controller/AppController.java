@@ -15,12 +15,16 @@ public class AppController extends Application {
     private static Scene registerScene;
     private static Scene mainScene;
     private static Scene managerUsersScene;
-    private static Scene productDetailScene;
+    private static Scene productDetailsScene;
+    private static Scene userDetailsScene;
     private static Scene addProductScene;
+    private static Scene editProductScene;
+    private static Scene editUserScene;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         stage = primaryStage;
+
         Parent fxmlLogin = FXMLLoader.load(AppController.class.getResource("/br/com/catolicapb/introwebatividadefx/LoginScreen.fxml"));
         loginScene = new DraggableScene(fxmlLogin);
         Parent fxmlRegister = FXMLLoader.load(AppController.class.getResource("/br/com/catolicapb/introwebatividadefx/RegisterScreen.fxml"));
@@ -30,9 +34,16 @@ public class AppController extends Application {
         Parent fxmlManagerUsers = FXMLLoader.load(AppController.class.getResource("/br/com/catolicapb/introwebatividadefx/ManagerUsersScreen.fxml"));
         managerUsersScene = new DraggableScene(fxmlManagerUsers);
         Parent fxmlProductDetail = FXMLLoader.load(AppController.class.getResource("/br/com/catolicapb/introwebatividadefx/ProductDetailsScreen.fxml"));
-        productDetailScene = new DraggableScene(fxmlProductDetail);
+        productDetailsScene = new DraggableScene(fxmlProductDetail);
         Parent fxmlAddProduct = FXMLLoader.load(AppController.class.getResource("/br/com/catolicapb/introwebatividadefx/AddProductScreen.fxml"));
         addProductScene = new DraggableScene(fxmlAddProduct);
+        Parent fxmlUserDetails = FXMLLoader.load(AppController.class.getResource("/br/com/catolicapb/introwebatividadefx/UserDetailsScreen.fxml"));
+        userDetailsScene = new DraggableScene(fxmlUserDetails);
+        Parent fxmlEditUser = FXMLLoader.load(AppController.class.getResource("/br/com/catolicapb/introwebatividadefx/EditUserScreen.fxml"));
+        editUserScene = new DraggableScene(fxmlEditUser);
+        Parent fxmlEditProduct = FXMLLoader.load(AppController.class.getResource("/br/com/catolicapb/introwebatividadefx/EditProductScreen.fxml"));
+        editProductScene = new DraggableScene(fxmlEditProduct);
+
         primaryStage.setScene(loginScene);
         primaryStage.show();
     }
@@ -54,6 +65,26 @@ public class AppController extends Application {
             case "addProduct":
                 stage.setScene(addProductScene);
                 ScreenManager.notifyAllListeners("addProduct", userID);
+                break;
+            case "productDetails":
+                stage.setScene(productDetailsScene);
+                ScreenManager.notifyAllListeners("productDetails", userID);
+                break;
+            case "userDetails":
+                stage.setScene(userDetailsScene);
+                ScreenManager.notifyAllListeners("userDetails", userID);
+                break;
+            case "managerUsers":
+                stage.setScene(managerUsersScene);
+                ScreenManager.notifyAllListeners("managerUsers", userID);
+                break;
+            case "editUser":
+                stage.setScene(editUserScene);
+                ScreenManager.notifyAllListeners("editUser", userID);
+                break;
+            case "editProduct":
+                stage.setScene(editProductScene);
+                ScreenManager.notifyAllListeners("editProduct", userID);
                 break;
         }
     }

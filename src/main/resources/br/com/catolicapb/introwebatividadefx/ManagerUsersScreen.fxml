@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.catolicapb.introwebatividadefx.Controller.ManagerUsersScreenController">
+<AnchorPane prefHeight="530.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.catolicapb.introwebatividadefx.Controller.ManagerUsersScreenController">
    <children>
       <Label layoutX="214.0" layoutY="83.0" text="Gerenciar Usuários" />
       <Button layoutX="417.0" layoutY="248.0" mnemonicParsing="false" onAction="#btBackAction" text="Voltar" />

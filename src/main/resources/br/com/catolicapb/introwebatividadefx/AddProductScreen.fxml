@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.catolicapb.introwebatividadefx.Controller.AddProductScreenController">
+<AnchorPane prefHeight="530.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.catolicapb.introwebatividadefx.Controller.AddProductScreenController">
    <children>
       <Label layoutX="228.0" layoutY="96.0" text="Adicionar Produto" />
       <Button layoutX="419.0" layoutY="260.0" mnemonicParsing="false" onAction="#btBackAction" text="Voltar" />
