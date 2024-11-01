@@ -43,4 +43,8 @@ public class AuthService {
     public static String getAccessToken() {
         return accessToken;
     }
+
+    public static void logout() {
+        accessToken = null;
+    }
 }

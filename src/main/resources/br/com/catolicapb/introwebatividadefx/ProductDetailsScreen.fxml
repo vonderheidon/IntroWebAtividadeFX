@@ -2,12 +2,19 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
-
 
 <AnchorPane prefHeight="530.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.catolicapb.introwebatividadefx.Controller.ProductDetailsScreenController">
    <children>
-      <Label layoutX="242.0" layoutY="71.0" text="Detalhes do produto" />
-      <Button layoutX="422.0" layoutY="261.0" mnemonicParsing="false" onAction="#btBackAction" text="Voltar" />
+      <Label layoutX="395.0" layoutY="64.0" text="Detalhes do Produto" />
+      <Button layoutX="588.0" layoutY="389.0" mnemonicParsing="false" onAction="#btBackAction" text="Voltar" />
+      <TableView layoutX="264.0" layoutY="146.0" prefHeight="200.0" prefWidth="372.0">
+        <columns>
+          <TableColumn prefWidth="119.0" text="Campo" />
+          <TableColumn prefWidth="252.0" text="Detalhe" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

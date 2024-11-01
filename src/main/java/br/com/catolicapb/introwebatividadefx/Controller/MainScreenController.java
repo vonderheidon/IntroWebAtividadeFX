@@ -149,7 +149,8 @@ public class MainScreenController implements IOnChangeScreen {
 
     @FXML
     void btLogoutAction() {
-
+        AuthService.logout();
+        AppController.changeScreen("login");
     }
 
     @FXML
