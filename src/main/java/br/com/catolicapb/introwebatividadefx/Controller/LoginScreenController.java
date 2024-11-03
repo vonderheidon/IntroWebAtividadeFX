@@ -21,7 +21,7 @@ public class LoginScreenController implements IOnChangeScreen {
     }
 
     @Override
-    public void onScreenChanged(String newScreen, String userID) {
+    public void onScreenChanged(String newScreen, String userID, Object data) {
         if (newScreen.equals("login")) {
             clearFields();
         }
@@ -43,7 +43,7 @@ public class LoginScreenController implements IOnChangeScreen {
 
         boolean isAuthenticated = AuthService.login(username, password);
         if (isAuthenticated) {
-            AppController.changeScreen("main");
+            AppController.changeScreen("main", username, null);
         } else {
             System.out.println("Falha no login. Verifique suas credenciais.");
         }

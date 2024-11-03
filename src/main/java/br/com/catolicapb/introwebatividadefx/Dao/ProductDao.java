@@ -51,8 +51,8 @@ public class ProductDao {
         }
     }
 
-    public static Product inserirProduto(String token, Product produto) throws Exception {
-        String json = gson.toJson(produto);
+    public static Product inserirProduto(String token, Product product) throws Exception {
+        String json = gson.toJson(product);
 
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(new URI(BASE_URL + "/produtos"))
@@ -67,6 +67,23 @@ public class ProductDao {
             return gson.fromJson(response.body(), Product.class);
         } else {
             throw new Exception("Erro ao inserir produto: " + response.body());
+        }
+    }
+
+    public static void atualizarProduto(String token, Product product) throws Exception {
+        String json = gson.toJson(product);
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(new URI(BASE_URL + "/produtos/" + product.getId()))
+                .header("Authorization", "Bearer " + token)
+                .header("Content-Type", "application/json")
+                .PUT(HttpRequest.BodyPublishers.ofString(json))
+                .build();
+
+        HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+
+        if (response.statusCode() != 200) {
+            throw new Exception("Erro ao atualizar produto: " + response.body());
         }
     }
 

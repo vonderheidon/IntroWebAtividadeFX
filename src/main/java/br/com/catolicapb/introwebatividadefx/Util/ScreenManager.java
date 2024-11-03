@@ -12,8 +12,10 @@ public class ScreenManager {
         listeners.add(newListener);
     }
 
-    public static void notifyAllListeners(String newScreen, String  userID) {
-        for (IOnChangeScreen iOnChangeScreen : listeners)
-            iOnChangeScreen.onScreenChanged(newScreen, userID);
+    public static void notifyAllListeners(String newScreen, String userID, Object data) {
+        for (IOnChangeScreen listener : listeners) {
+            listener.onScreenChanged(newScreen, userID, data);
+        }
     }
+
 }

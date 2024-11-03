@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="530.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.catolicapb.introwebatividadefx.Controller.EditUserScreenController">
    <children>
-      <Label layoutX="252.0" layoutY="81.0" text="Editar Usuário" />
-      <Button layoutX="432.0" layoutY="271.0" mnemonicParsing="false" onAction="#btBackAction" text="Voltar" />
+      <Label fx:id="lbUserName" layoutX="363.0" layoutY="138.0" text="Editar usuário" />
+      <Label layoutX="372.0" layoutY="200.0" text="Tipo de Usuário:" />
+      <ComboBox fx:id="cbUserType" layoutX="475.0" layoutY="200.0" />
+      <Button layoutX="476.0" layoutY="284.0" mnemonicParsing="false" onAction="#btBackAction" text="Voltar" />
+      <Button fx:id="btUpdateUser" layoutX="374.0" layoutY="284.0" mnemonicParsing="false" onAction="#btUpdateUserAction" text="Atualizar" />
    </children>
 </AnchorPane>

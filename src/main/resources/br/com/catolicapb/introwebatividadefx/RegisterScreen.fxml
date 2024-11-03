@@ -8,14 +8,14 @@
 
 <AnchorPane prefHeight="530.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.catolicapb.introwebatividadefx.Controller.RegisterScreenController">
    <children>
-      <TextField fx:id="tfLogin" layoutX="226.0" layoutY="141.0" />
-      <PasswordField fx:id="pfPassword" layoutX="226.0" layoutY="193.0" />
-      <PasswordField fx:id="pfPasswordConfirm" layoutX="226.0" layoutY="245.0" />
-      <Button layoutX="307.0" layoutY="280.0" mnemonicParsing="false" onAction="#btRegisterAction" text="Cadastrar" />
-      <Button layoutX="227.0" layoutY="280.0" mnemonicParsing="false" onAction="#btCancelAction" text="Cancelar" />
-      <Label layoutX="237.0" layoutY="64.0" text="Cadastro de Novo Usuário" />
-      <Label layoutX="227.0" layoutY="124.0" text="Login:" />
-      <Label layoutX="227.0" layoutY="176.0" text="Senha:" />
-      <Label layoutX="227.0" layoutY="228.0" text="Confirmar senha:" />
+      <TextField fx:id="tfLogin" layoutX="375.0" layoutY="174.0" />
+      <PasswordField fx:id="pfPassword" layoutX="375.0" layoutY="226.0" />
+      <PasswordField fx:id="pfPasswordConfirm" layoutX="375.0" layoutY="278.0" />
+      <Button layoutX="376.0" layoutY="314.0" mnemonicParsing="false" onAction="#btRegisterAction" text="Cadastrar" />
+      <Button layoutX="462.0" layoutY="314.0" mnemonicParsing="false" onAction="#btCancelAction" text="Cancelar" />
+      <Label layoutX="386.0" layoutY="97.0" text="Cadastro de Novo Usuário" />
+      <Label layoutX="376.0" layoutY="157.0" text="Login:" />
+      <Label layoutX="376.0" layoutY="209.0" text="Senha:" />
+      <Label layoutX="376.0" layoutY="261.0" text="Confirmar senha:" />
    </children>
 </AnchorPane>

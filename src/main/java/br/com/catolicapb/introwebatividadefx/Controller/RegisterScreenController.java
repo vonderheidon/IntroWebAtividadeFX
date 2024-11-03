@@ -22,7 +22,7 @@ public class RegisterScreenController implements IOnChangeScreen {
     }
 
     @Override
-    public void onScreenChanged(String newScreen, String userID) {
+    public void onScreenChanged(String newScreen, String userID, Object data) {
         if (newScreen.equals("register")) {
             clearFields();
         }
@@ -43,8 +43,8 @@ public class RegisterScreenController implements IOnChangeScreen {
     }
 
     private void clearFields() {
-        tfLogin.setText("");
-        pfPassword.setText("");
-        pfPasswordConfirm.setText("");
+        tfLogin.clear();
+        pfPassword.clear();
+        pfPasswordConfirm.clear();
     }
 }

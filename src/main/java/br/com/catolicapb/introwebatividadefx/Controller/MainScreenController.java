@@ -39,6 +39,7 @@ public class MainScreenController implements IOnChangeScreen {
     private TextField searchBar;
     @FXML
     private Button btUserManagement;
+    private String userID;
     private ObservableList<Product> allProducts = FXCollections.observableArrayList();
     private FilteredList<Product> filteredProducts;
     private String token;
@@ -124,10 +125,11 @@ public class MainScreenController implements IOnChangeScreen {
     }
 
     @Override
-    public void onScreenChanged(String newScreen, String userID) {
+    public void onScreenChanged(String newScreen, String userID, Object data) {
         if (newScreen.equals("main")) {
             try {
                 token = AuthService.getAccessToken();
+                this.userID = userID;
 
                 List<Product> produtos = ProductDao.listarProdutos(token);
                 allProducts.setAll(produtos);
@@ -144,7 +146,7 @@ public class MainScreenController implements IOnChangeScreen {
 
     @FXML
     void btAddNewProductAction() {
-        AppController.changeScreen("addProduct");
+        AppController.changeScreen("addProduct", userID, null);
     }
 
     @FXML
@@ -159,13 +161,11 @@ public class MainScreenController implements IOnChangeScreen {
     }
 
     private void verDetalhes(Product product) {
-        ProductDetailsScreenController.SetProduct(product);
-        AppController.changeScreen("productDetails");
+        AppController.changeScreen("productDetails", null, product);
     }
 
     private void editarProduto(Product product) {
-        EditProductScreenController.setProduct(product);
-        AppController.changeScreen("editProduct");
+        AppController.changeScreen("editProduct", null, product);
     }
 
     private void excluirProduto(Product product) {
