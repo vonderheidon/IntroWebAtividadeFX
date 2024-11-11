@@ -6,14 +6,14 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.catolicapb.introwebatividadefx.Controller.LoginScreenController">
+<AnchorPane prefHeight="530.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.catolicapb.introwebatividadefx.Controller.LoginScreenController">
    <children>
-      <TextField fx:id="tfLogin" layoutX="226.0" layoutY="159.0" />
-      <PasswordField fx:id="pfPassword" layoutX="226.0" layoutY="211.0" />
-      <Button layoutX="326.0" layoutY="246.0" mnemonicParsing="false" onAction="#btEnterAction" text="Entrar" />
-      <Button layoutX="227.0" layoutY="246.0" mnemonicParsing="false" onAction="#btRegisterAction" text="Cadastrar" />
-      <Label layoutX="285.0" layoutY="60.0" text="Login" />
-      <Label layoutX="227.0" layoutY="142.0" text="Username" />
-      <Label layoutX="227.0" layoutY="194.0" text="Password" />
+      <TextField fx:id="tfLogin" layoutX="376.0" layoutY="186.0" />
+      <PasswordField fx:id="pfPassword" layoutX="376.0" layoutY="238.0" />
+      <Button layoutX="476.0" layoutY="273.0" mnemonicParsing="false" onAction="#btEnterAction" text="Entrar" />
+      <Button layoutX="377.0" layoutY="273.0" mnemonicParsing="false" onAction="#btRegisterAction" text="Cadastrar" />
+      <Label layoutX="435.0" layoutY="87.0" text="Login" />
+      <Label layoutX="377.0" layoutY="169.0" text="Username" />
+      <Label layoutX="377.0" layoutY="221.0" text="Password" />
    </children>
 </AnchorPane>

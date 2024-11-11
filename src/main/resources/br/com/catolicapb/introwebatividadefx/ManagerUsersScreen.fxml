@@ -8,13 +8,13 @@
 
 <AnchorPane prefHeight="530.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.catolicapb.introwebatividadefx.Controller.ManagerUsersScreenController">
     <children>
-        <Label layoutX="401.0" layoutY="82.0" text="Usuários Cadastrados" />
-        <Button layoutX="700.0" layoutY="397.0" mnemonicParsing="false" onAction="#btBackAction" text="Voltar" />
-        <TableView fx:id="tableUsuarios" layoutX="249.0" layoutY="181.0" prefHeight="200.0" prefWidth="403.0">
+        <Label layoutX="393.0" layoutY="79.0" text="Usuários Cadastrados" />
+        <Button layoutX="693.0" layoutY="481.0" mnemonicParsing="false" onAction="#btBackAction" text="Voltar" />
+        <TableView fx:id="tableUsuarios" layoutX="160.0" layoutY="119.0" prefHeight="334.0" prefWidth="581.0">
             <columns>
-                <TableColumn fx:id="colLogin" prefWidth="113.0" text="Login" />
-                <TableColumn fx:id="colTipoUser" prefWidth="201.0" text="Tipo de usuário" />
-                <TableColumn fx:id="colEditar" minWidth="0.0" prefWidth="87.0" text="Editar" />
+                <TableColumn fx:id="colLogin" prefWidth="185.0" text="Login" />
+                <TableColumn fx:id="colTipoUser" prefWidth="211.0" text="Tipo de usuário" />
+                <TableColumn fx:id="colEditar" minWidth="0.0" prefWidth="183.0" text="Editar" />
             </columns>
         </TableView>
     </children>

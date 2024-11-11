@@ -4,6 +4,7 @@ import br.com.catolicapb.introwebatividadefx.Interface.IOnChangeScreen;
 import br.com.catolicapb.introwebatividadefx.Model.Product;
 import br.com.catolicapb.introwebatividadefx.Dao.ProductDao;
 import br.com.catolicapb.introwebatividadefx.Service.AuthService;
+import br.com.catolicapb.introwebatividadefx.Util.AlertUtils;
 import br.com.catolicapb.introwebatividadefx.Util.ScreenManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -36,21 +37,13 @@ public class EditProductScreenController implements IOnChangeScreen {
 
             ProductDao.atualizarProduto(AuthService.getAccessToken(), product);
 
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Sucesso");
-            alert.setHeaderText(null);
-            alert.setContentText("Produto atualizado com sucesso!");
-            alert.showAndWait();
+            AlertUtils.showInfo("Sucesso", "Produto atualizado com sucesso!");
 
             AppController.changeScreen("main");
 
         } catch (Exception e) {
             e.printStackTrace();
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Erro");
-            alert.setHeaderText(null);
-            alert.setContentText("Falha ao atualizar o produto: " + e.getMessage());
-            alert.showAndWait();
+            AlertUtils.showError("Erro", "Falha ao atualizar o produto: " + e.getMessage());
         }
     }
 

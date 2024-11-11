@@ -34,6 +34,21 @@ public class ProductDao {
         }
     }
 
+    public static void excluirProduto(String token, String id) throws Exception {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(new URI(BASE_URL + "/produtos/" + id))
+                .header("Authorization", "Bearer " + token)
+                .header("Content-Type", "application/json")
+                .DELETE()
+                .build();
+
+        HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+
+        if (response.statusCode() != 200) {
+            throw new Exception("Erro ao excluir produto: " + response.body());
+        }
+    }
+
     public static Product buscarProdutoPorId(String token, String id) throws Exception {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(new URI(BASE_URL + "/produtos/" + id))

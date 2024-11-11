@@ -20,11 +20,10 @@
         <TextField fx:id="searchBar" layoutX="571.0" layoutY="373.0" prefWidth="250.0" promptText="Buscar produto..." />
         <TableView fx:id="productTable" layoutX="74.0" layoutY="175.0" prefHeight="178.0" prefWidth="751.0" stylesheets="@../../../../CSS/Style.css">
             <columns>
-                <TableColumn fx:id="idColumn" prefWidth="87.0" text="ID" />
                 <TableColumn fx:id="nomeColumn" prefWidth="213.0" text="Nome" />
-                <TableColumn fx:id="quantidadeColumn" prefWidth="120" text="Quantidade" />
-                <TableColumn fx:id="precoColumn" prefWidth="120" text="Preço" />
-                <TableColumn fx:id="acoesColumn" prefWidth="208.3019402987095" text="Ações" />
+                <TableColumn fx:id="quantidadeColumn" prefWidth="145.0" text="Quantidade" />
+                <TableColumn fx:id="precoColumn" prefWidth="132.0" text="Preço" />
+                <TableColumn fx:id="acoesColumn" prefWidth="261.0" text="Ações" />
             </columns>
         </TableView>
         <Button fx:id="prevPageBtn" layoutX="77.0" layoutY="373.0" onAction="#previousPage" text="Anterior" />

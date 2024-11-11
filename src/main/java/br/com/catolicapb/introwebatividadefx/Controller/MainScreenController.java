@@ -4,6 +4,7 @@ import br.com.catolicapb.introwebatividadefx.Dao.ProductDao;
 import br.com.catolicapb.introwebatividadefx.Interface.IOnChangeScreen;
 import br.com.catolicapb.introwebatividadefx.Model.Product;
 import br.com.catolicapb.introwebatividadefx.Service.AuthService;
+import br.com.catolicapb.introwebatividadefx.Util.AlertUtils;
 import br.com.catolicapb.introwebatividadefx.Util.ScreenManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -19,8 +20,6 @@ public class MainScreenController implements IOnChangeScreen {
 
     @FXML
     private TableView<Product> productTable;
-    @FXML
-    private TableColumn<Product, Integer> idColumn;
     @FXML
     private TableColumn<Product, String> nomeColumn;
     @FXML
@@ -52,7 +51,6 @@ public class MainScreenController implements IOnChangeScreen {
 
         filteredProducts = new FilteredList<>(FXCollections.observableArrayList());
 
-        idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         nomeColumn.setCellValueFactory(new PropertyValueFactory<>("nome"));
         quantidadeColumn.setCellValueFactory(new PropertyValueFactory<>("qtde"));
         precoColumn.setCellValueFactory(new PropertyValueFactory<>("preco"));
@@ -69,7 +67,13 @@ public class MainScreenController implements IOnChangeScreen {
             private final Button excluirBtn = new Button("Excluir");
 
             {
-                detalhesBtn.setOnAction(e -> verDetalhes(getTableView().getItems().get(getIndex())));
+                detalhesBtn.setOnAction(e -> {
+                    try {
+                        verDetalhes(getTableView().getItems().get(getIndex()).getId());
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
+                    }
+                });
                 editarBtn.setOnAction(e -> editarProduto(getTableView().getItems().get(getIndex())));
                 excluirBtn.setOnAction(e -> excluirProduto(getTableView().getItems().get(getIndex())));
             }
@@ -160,8 +164,13 @@ public class MainScreenController implements IOnChangeScreen {
         AppController.changeScreen("managerUsers");
     }
 
-    private void verDetalhes(Product product) {
-        AppController.changeScreen("productDetails", null, product);
+    private void verDetalhes(String id) throws Exception {
+        Product product = ProductDao.buscarProdutoPorId(AuthService.getAccessToken(), id);
+        if (product != null) {
+            AppController.changeScreen("productDetails", null, product);
+        } else {
+            System.out.println("Produto não encontrado.");
+        }
     }
 
     private void editarProduto(Product product) {
@@ -169,12 +178,17 @@ public class MainScreenController implements IOnChangeScreen {
     }
 
     private void excluirProduto(Product product) {
-        Alert confirm = new Alert(Alert.AlertType.CONFIRMATION, "Deseja realmente excluir?", ButtonType.YES, ButtonType.NO);
-        confirm.showAndWait().ifPresent(response -> {
-            if (response == ButtonType.YES) {
+        boolean confirmed = AlertUtils.showConfirmation("Excluir Produto", "Deseja realmente excluir este produto?");
+        if (confirmed) {
+            try {
+                ProductDao.excluirProduto(AuthService.getAccessToken(), product.getId());
                 allProducts.remove(product);
                 updatePage();
+            } catch (Exception e) {
+                AlertUtils.showError("Erro ao Excluir Produto", "Ocorreu um erro ao tentar excluir o produto.");
+                e.printStackTrace();
             }
-        });
+        }
     }
+
 }

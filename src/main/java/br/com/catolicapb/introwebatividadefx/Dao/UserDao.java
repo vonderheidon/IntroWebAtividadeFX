@@ -34,4 +34,39 @@ public class UserDao {
             throw new Exception("Erro ao listar usuários: " + response.body());
         }
     }
+
+    public static void atualizarUsuario(String token, User user) throws Exception {
+        String json = gson.toJson(user);
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(new URI(BASE_URL + "/usuarios/" + user.getLoginuser()))
+                .header("Authorization", "Bearer " + token)
+                .header("Content-Type", "application/json")
+                .method("PUT", HttpRequest.BodyPublishers.ofString(json))
+                .build();
+
+        HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+
+        if (response.statusCode() != 200) {
+            throw new Exception("Erro ao atualizar usuário: " + response.body());
+        }
+    }
+
+    public static void cadastrarUsuario(String token, User user) throws Exception {
+        String json = gson.toJson(user);
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(new URI(BASE_URL + "/cadastrarUsuario"))
+                .header("Authorization", "Bearer " + token)
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString(json))
+                .build();
+
+        HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+
+        if (response.statusCode() != 201) {
+            throw new Exception("Erro ao cadastrar usuário: " + response.body());
+        }
+    }
+
 }
