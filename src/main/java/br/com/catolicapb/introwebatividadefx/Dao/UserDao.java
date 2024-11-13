@@ -69,4 +69,21 @@ public class UserDao {
         }
     }
 
+    public static User buscarUsuarioPorLogin(String token, String loginuser) throws Exception {
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(new URI(BASE_URL + "/usuarios/" + loginuser))
+                .header("Authorization", "Bearer " + token)
+                .header("Content-Type", "application/json")
+                .GET()
+                .build();
+
+        HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+
+        if (response.statusCode() == 200) {
+            return gson.fromJson(response.body(), User.class);
+        } else {
+            throw new Exception("Erro ao buscar usuário: " + response.body());
+        }
+    }
+
 }

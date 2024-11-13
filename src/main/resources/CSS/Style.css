@@ -1,3 +1,52 @@
+/* Fundo e texto padrão */
+.root {
+    -fx-font-family: 'Arial';
+    -fx-background-color: #f0f0f5;
+}
+
+/* Labels */
+.label {
+    -fx-font-weight: bold;
+}
+
+/* Cabeçalho */
+.label-title {
+    -fx-font-size: 2em;
+    -fx-alignment: center;
+    -fx-text-fill: #3498db;
+}
+
+/* Campos de texto e senha */
+.text-field, .password-field {
+    -fx-padding: 10;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #3498db;
+}
+
+/* Botões */
+
+.button {
+    -fx-cursor: hand;
+}
+
+.button-default {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-padding: 8 15;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.button-default:hover {
+    -fx-background-color: #2980b9;
+}
+
+/* Tabelas */
 .table-view {
     -fx-padding: 0;
     -fx-background-color: transparent;
@@ -7,4 +56,57 @@
     -fx-pref-width: 0;
     -fx-pref-height: 0;
     -fx-opacity: 0;
+}
+
+.table-view .column-header {
+    -fx-background-color: #3498db;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8 15;
+}
+
+.anchor-main {
+    -fx-background-color: #fff;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 8, 0, 0, 4);
+    -fx-padding: 0px;
+    -fx-spacing: 10px;
+}
+
+.anchor-main .button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #3498db;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    -fx-alignment: center-left;
+    -fx-padding: 5 10;
+}
+
+.anchor-main .button:hover {
+    -fx-text-fill: #2980b9;
+}
+
+.anchor-main .menu-icon {
+    -fx-fill: #3498db;
+    -fx-font-size: 18px;
+    -fx-margin-right: 8px;
+}
+
+.action-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #3498db;
+    -fx-font-size: 1.0em;
+}
+
+.action-button:hover {
+    -fx-text-fill: #2980b9;
+    -fx-background-color: rgba(52, 152, 219, 0.1);
+}
+
+.action-button:pressed {
+    -fx-background-color: rgba(52, 152, 219, 0.2);
 }

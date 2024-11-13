@@ -39,8 +39,8 @@ public class LoginScreenController implements IOnChangeScreen {
     }
 
     private void loginProcedure() {
-        String username = tfLogin.getText();
-        String password = pfPassword.getText();
+        String username = "teste";//tfLogin.getText();
+        String password = "1234";//pfPassword.getText();
 
         boolean isAuthenticated = AuthService.login(username, password);
         if (isAuthenticated) {

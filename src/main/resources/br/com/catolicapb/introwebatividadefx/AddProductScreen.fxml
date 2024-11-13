@@ -5,16 +5,16 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="530.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.catolicapb.introwebatividadefx.Controller.AddProductScreenController">
+<AnchorPane prefHeight="530.0" prefWidth="900.0" stylesheets="@../../../../CSS/Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.catolicapb.introwebatividadefx.Controller.AddProductScreenController">
    <children>
-      <Label layoutX="379.0" layoutY="86.0" text="Adicionar Novo Produto" />
-      <TextField fx:id="tfNome" layoutX="341.0" layoutY="164.0" prefHeight="25.0" prefWidth="220.0" />
-      <TextField fx:id="tfQtde" layoutX="341.0" layoutY="228.0" prefHeight="25.0" prefWidth="220.0" />
-      <TextField fx:id="tfPreco" layoutX="341.0" layoutY="291.0" prefHeight="25.0" prefWidth="220.0" />
-      <Button layoutX="340.0" layoutY="353.0" mnemonicParsing="false" onAction="#btAddAction" text="Adicionar" />
-      <Button layoutX="513.0" layoutY="353.0" mnemonicParsing="false" onAction="#btBackAction" text="Voltar" />
-      <Label layoutX="340.0" layoutY="147.0" text="Nome:" />
-      <Label layoutX="341.0" layoutY="209.0" text="Quantidade:" />
-      <Label layoutX="340.0" layoutY="271.0" text="Preço:" />
+      <Label layoutX="313.0" layoutY="74.0" styleClass="label-title" text="Adicionar Novo Produto" />
+      <TextField fx:id="tfNome" layoutX="341.0" layoutY="160.0" prefHeight="25.0" prefWidth="220.0" />
+      <TextField fx:id="tfQtde" layoutX="341.0" layoutY="232.0" prefHeight="25.0" prefWidth="220.0" />
+      <TextField fx:id="tfPreco" layoutX="341.0" layoutY="303.0" prefHeight="25.0" prefWidth="220.0" />
+      <Button layoutX="412.0" layoutY="369.0" mnemonicParsing="false" onAction="#btAddAction" styleClass="button-default" text="Adicionar" />
+      <Button layoutX="421.0" layoutY="430.0" mnemonicParsing="false" onAction="#btBackAction" styleClass="button-default" text="Voltar" />
+      <Label layoutX="340.0" layoutY="143.0" text="Nome:" />
+      <Label layoutX="341.0" layoutY="213.0" text="Quantidade:" />
+      <Label layoutX="340.0" layoutY="283.0" text="Preço:" />
    </children>
 </AnchorPane>

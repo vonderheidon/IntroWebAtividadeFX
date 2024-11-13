@@ -6,14 +6,14 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="530.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.catolicapb.introwebatividadefx.Controller.LoginScreenController">
+<AnchorPane prefHeight="530.0" prefWidth="900.0" stylesheets="@../../../../CSS/Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.catolicapb.introwebatividadefx.Controller.LoginScreenController">
    <children>
-      <TextField fx:id="tfLogin" layoutX="376.0" layoutY="186.0" />
-      <PasswordField fx:id="pfPassword" layoutX="376.0" layoutY="238.0" />
-      <Button layoutX="476.0" layoutY="273.0" mnemonicParsing="false" onAction="#btEnterAction" text="Entrar" />
-      <Button layoutX="377.0" layoutY="273.0" mnemonicParsing="false" onAction="#btRegisterAction" text="Cadastrar" />
-      <Label layoutX="435.0" layoutY="87.0" text="Login" />
-      <Label layoutX="377.0" layoutY="169.0" text="Username" />
-      <Label layoutX="377.0" layoutY="221.0" text="Password" />
+      <TextField fx:id="tfLogin" layoutX="377.0" layoutY="181.0" styleClass="text-field" />
+      <PasswordField fx:id="pfPassword" layoutX="377.0" layoutY="250.0" styleClass="password-field" />
+      <Button layoutX="420.0" layoutY="318.0" mnemonicParsing="false" onAction="#btEnterAction" styleClass="button-default" text="Entrar" />
+      <Button layoutX="410.0" layoutY="378.0" mnemonicParsing="false" onAction="#btRegisterAction" styleClass="button-default" text="Cadastrar" />
+      <Label layoutX="423.0" layoutY="84.0" styleClass="label-title" text="Login" />
+      <Label layoutX="378.0" layoutY="164.0" text="Username" />
+      <Label layoutX="378.0" layoutY="233.0" text="Password" />
    </children>
 </AnchorPane>

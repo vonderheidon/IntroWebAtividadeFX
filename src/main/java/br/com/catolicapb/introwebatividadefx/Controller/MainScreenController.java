@@ -3,9 +3,11 @@ package br.com.catolicapb.introwebatividadefx.Controller;
 import br.com.catolicapb.introwebatividadefx.Dao.ProductDao;
 import br.com.catolicapb.introwebatividadefx.Interface.IOnChangeScreen;
 import br.com.catolicapb.introwebatividadefx.Model.Product;
+import br.com.catolicapb.introwebatividadefx.Model.User;
 import br.com.catolicapb.introwebatividadefx.Service.AuthService;
 import br.com.catolicapb.introwebatividadefx.Util.AlertUtils;
 import br.com.catolicapb.introwebatividadefx.Util.ScreenManager;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -13,6 +15,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 
 import java.util.List;
 
@@ -62,11 +65,23 @@ public class MainScreenController implements IOnChangeScreen {
 
     private void addActionsColumn() {
         acoesColumn.setCellFactory(col -> new TableCell<>() {
-            private final Button detalhesBtn = new Button("Detalhes");
-            private final Button editarBtn = new Button("Editar");
-            private final Button excluirBtn = new Button("Excluir");
+            private final Button detalhesBtn = new Button();
+            private final Button editarBtn = new Button();
+            private final Button excluirBtn = new Button();
 
             {
+                FontAwesomeIconView detalhesIcon = new FontAwesomeIconView(FontAwesomeIcon.EYE);
+                FontAwesomeIconView editarIcon = new FontAwesomeIconView(FontAwesomeIcon.PENCIL);
+                FontAwesomeIconView excluirIcon = new FontAwesomeIconView(FontAwesomeIcon.TRASH);
+
+                detalhesBtn.setGraphic(detalhesIcon);
+                editarBtn.setGraphic(editarIcon);
+                excluirBtn.setGraphic(excluirIcon);
+
+                detalhesBtn.getStyleClass().addAll("action-button");
+                editarBtn.getStyleClass().addAll("action-button");
+                excluirBtn.getStyleClass().addAll("action-button");
+
                 detalhesBtn.setOnAction(e -> {
                     try {
                         verDetalhes(getTableView().getItems().get(getIndex()).getId());
@@ -134,6 +149,13 @@ public class MainScreenController implements IOnChangeScreen {
             try {
                 token = AuthService.getAccessToken();
                 this.userID = userID;
+
+                User user = AuthService.getUser();
+                if (user != null && user.getTipouser().equals("super")) {
+                    btUserManagement.setVisible(true);
+                } else {
+                    btUserManagement.setVisible(false);
+                }
 
                 List<Product> produtos = ProductDao.listarProdutos(token);
                 allProducts.setAll(produtos);
