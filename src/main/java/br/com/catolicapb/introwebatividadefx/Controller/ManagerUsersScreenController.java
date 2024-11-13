@@ -5,14 +5,18 @@ import br.com.catolicapb.introwebatividadefx.Interface.IOnChangeScreen;
 import br.com.catolicapb.introwebatividadefx.Model.User;
 import br.com.catolicapb.introwebatividadefx.Service.AuthService;
 import br.com.catolicapb.introwebatividadefx.Util.ScreenManager;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.HBox;
 import javafx.util.Callback;
 
 import java.util.List;
@@ -57,9 +61,16 @@ public class ManagerUsersScreenController implements IOnChangeScreen {
             @Override
             public TableCell<User, Void> call(final TableColumn<User, Void> param) {
                 return new TableCell<>() {
-                    private final Button btn = new Button("Editar");
+                    private final Button btn = new Button();
 
                     {
+                        FontAwesomeIconView editarIcon = new FontAwesomeIconView(FontAwesomeIcon.EDIT);
+                        editarIcon.getStyleClass().add("icon-blue");
+
+                        btn.setGraphic(editarIcon);
+
+                        btn.getStyleClass().addAll("action-button");
+
                         btn.setOnAction(event -> {
                             User user = getTableView().getItems().get(getIndex());
                             editarUsuario(user);
@@ -72,7 +83,9 @@ public class ManagerUsersScreenController implements IOnChangeScreen {
                         if (empty) {
                             setGraphic(null);
                         } else {
-                            setGraphic(btn);
+                            HBox buttonBox = new HBox(10, btn);
+                            buttonBox.setAlignment(Pos.CENTER);
+                            setGraphic(buttonBox);
                         }
                     }
                 };

@@ -5,12 +5,12 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="530.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.catolicapb.introwebatividadefx.Controller.EditUserScreenController">
+<AnchorPane prefHeight="530.0" prefWidth="900.0" stylesheets="@../../../../CSS/Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.catolicapb.introwebatividadefx.Controller.EditUserScreenController">
    <children>
-      <Label fx:id="lbUserName" layoutX="363.0" layoutY="138.0" text="Editar usuário" />
+      <Label fx:id="lbUserName" layoutX="344.0" layoutY="94.0" styleClass="label-title" text="Editar usuário" />
       <Label layoutX="372.0" layoutY="200.0" text="Tipo de Usuário:" />
       <ComboBox fx:id="cbUserType" layoutX="475.0" layoutY="200.0" />
-      <Button layoutX="476.0" layoutY="284.0" mnemonicParsing="false" onAction="#btBackAction" text="Voltar" />
-      <Button fx:id="btUpdateUser" layoutX="374.0" layoutY="284.0" mnemonicParsing="false" onAction="#btUpdateUserAction" text="Atualizar" />
+      <Button layoutX="420.0" layoutY="381.0" mnemonicParsing="false" onAction="#btBackAction" styleClass="button-default" text="Voltar" />
+      <Button fx:id="btUpdateUser" layoutX="413.0" layoutY="301.0" mnemonicParsing="false" onAction="#btUpdateUserAction" styleClass="button-default" text="Atualizar" />
    </children>
 </AnchorPane>
