@@ -5,16 +5,16 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="530.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.catolicapb.introwebatividadefx.Controller.EditProductScreenController">
+<AnchorPane prefHeight="530.0" prefWidth="900.0" stylesheets="@../../../../CSS/Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.catolicapb.introwebatividadefx.Controller.EditProductScreenController">
    <children>
-      <Label layoutX="412.0" layoutY="75.0" text="Editar Produto" />
-      <Button layoutX="523.0" layoutY="357.0" mnemonicParsing="false" onAction="#btBackAction" text="Voltar" />
-      <TextField fx:id="tfNome" layoutX="351.0" layoutY="174.0" prefHeight="25.0" prefWidth="220.0" />
-      <TextField fx:id="tfQtde" layoutX="351.0" layoutY="238.0" prefHeight="25.0" prefWidth="220.0" />
-      <TextField fx:id="tfPreco" layoutX="351.0" layoutY="301.0" prefHeight="25.0" prefWidth="220.0" />
-      <Label layoutX="350.0" layoutY="157.0" text="Nome:" />
-      <Label layoutX="351.0" layoutY="219.0" text="Quantidade:" />
-      <Label layoutX="350.0" layoutY="281.0" text="Preço:" />
-      <Button layoutX="351.0" layoutY="357.0" mnemonicParsing="false" onAction="#btSaveAction" text="Salvar" />
+      <Label layoutX="367.0" layoutY="74.0" styleClass="label-title" text="Editar Produto" />
+      <Button layoutX="420.0" layoutY="435.0" mnemonicParsing="false" onAction="#btBackAction" styleClass="button-default" text="Voltar" />
+      <TextField fx:id="tfNome" layoutX="351.0" layoutY="157.0" prefHeight="25.0" prefWidth="220.0" />
+      <TextField fx:id="tfQtde" layoutX="351.0" layoutY="233.0" prefHeight="25.0" prefWidth="220.0" />
+      <TextField fx:id="tfPreco" layoutX="351.0" layoutY="313.0" prefHeight="25.0" prefWidth="220.0" />
+      <Label layoutX="350.0" layoutY="140.0" text="Nome:" />
+      <Label layoutX="351.0" layoutY="214.0" text="Quantidade:" />
+      <Label layoutX="350.0" layoutY="293.0" text="Preço:" />
+      <Button layoutX="419.0" layoutY="383.0" mnemonicParsing="false" onAction="#btSaveAction" styleClass="button-default" text="Salvar" />
    </children>
 </AnchorPane>

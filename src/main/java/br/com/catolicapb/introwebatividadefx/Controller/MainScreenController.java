@@ -12,6 +12,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.HBox;
@@ -71,8 +72,13 @@ public class MainScreenController implements IOnChangeScreen {
 
             {
                 FontAwesomeIconView detalhesIcon = new FontAwesomeIconView(FontAwesomeIcon.EYE);
+                detalhesIcon.getStyleClass().add("icon-blue");
+
                 FontAwesomeIconView editarIcon = new FontAwesomeIconView(FontAwesomeIcon.PENCIL);
+                editarIcon.getStyleClass().add("icon-blue");
+
                 FontAwesomeIconView excluirIcon = new FontAwesomeIconView(FontAwesomeIcon.TRASH);
+                excluirIcon.getStyleClass().add("icon-red");
 
                 detalhesBtn.setGraphic(detalhesIcon);
                 editarBtn.setGraphic(editarIcon);
@@ -96,8 +102,13 @@ public class MainScreenController implements IOnChangeScreen {
             @Override
             protected void updateItem(Void item, boolean empty) {
                 super.updateItem(item, empty);
-                if (empty) setGraphic(null);
-                else setGraphic(new HBox(detalhesBtn, editarBtn, excluirBtn));
+                if (empty) {
+                    setGraphic(null);
+                } else {
+                    HBox buttonBox = new HBox(10, detalhesBtn, editarBtn, excluirBtn);
+                    buttonBox.setAlignment(Pos.CENTER);
+                    setGraphic(buttonBox);
+                }
             }
         });
     }

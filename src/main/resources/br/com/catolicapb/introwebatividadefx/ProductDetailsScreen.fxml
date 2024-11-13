@@ -6,10 +6,10 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="530.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.catolicapb.introwebatividadefx.Controller.ProductDetailsScreenController">
+<AnchorPane prefHeight="530.0" prefWidth="900.0" stylesheets="@../../../../CSS/Style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.catolicapb.introwebatividadefx.Controller.ProductDetailsScreenController">
     <children>
-        <Label layoutX="395.0" layoutY="64.0" text="Detalhes do Produto" />
-        <Button layoutX="588.0" layoutY="389.0" mnemonicParsing="false" onAction="#btBackAction" text="Voltar" />
+        <Label layoutX="333.0" layoutY="70.0" styleClass="label-title" text="Detalhes do Produto" />
+        <Button layoutX="420.0" layoutY="389.0" mnemonicParsing="false" onAction="#btBackAction" styleClass="button-default" text="Voltar" />
         <TableView fx:id="detailsTable" layoutX="264.0" layoutY="146.0" prefHeight="200.0" prefWidth="372.0">
             <columns>
                 <TableColumn fx:id="campoColumn" prefWidth="119.0" text="Campo" />

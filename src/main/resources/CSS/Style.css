@@ -68,6 +68,11 @@
     -fx-padding: 8 15;
 }
 
+.table-view .table-row-cell:selected {
+    -fx-background-color: #d2eaf6;
+    -fx-text-fill: #333;
+}
+
 .anchor-main {
     -fx-background-color: #fff;
     -fx-background-radius: 8px;
@@ -99,7 +104,6 @@
 .action-button {
     -fx-background-color: transparent;
     -fx-text-fill: #3498db;
-    -fx-font-size: 1.0em;
 }
 
 .action-button:hover {
@@ -109,4 +113,14 @@
 
 .action-button:pressed {
     -fx-background-color: rgba(52, 152, 219, 0.2);
+}
+
+.icon-blue {
+    -fx-fill: #3498db;
+    -fx-font-size: 16px;
+}
+
+.icon-red {
+    -fx-fill: #e74c3c;
+    -fx-font-size: 16px;
 }
